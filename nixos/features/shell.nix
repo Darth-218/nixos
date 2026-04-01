@@ -23,6 +23,30 @@
     mysql-workbench
   ];
 
+  programs.git = {
+    enable = true;
+    settings = {
+      user = {
+        name = "Yahia Gaber";
+        email = "yahia.hany.gaber@proton.me";
+      };
+
+      extraConfig = {
+        credential.helper = "store";
+        push.default = "current";
+        pull.rebase = true;
+        rebase.autoStash = true;
+        status.branch = true;
+        status.showStash = true;
+        status.showUntrackedFiles = "all";
+        advice.statusHints = false;
+        core.whitespace = "error";
+        interactive.editor = "nvim";
+        interactive.singleKey = true;
+      };
+    };
+  };
+
   home.file = {
     ".bashrc".source = ./bashrc/.bashrc;
     ".config/tmux".source = ./tmux;
