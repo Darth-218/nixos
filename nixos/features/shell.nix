@@ -16,6 +16,7 @@
     go
     gh
     python315
+    sesh
     unzip
     lazygit
     nerd-fonts.jetbrains-mono
