@@ -9,6 +9,7 @@
   home.packages = with pkgs; [
     blender
     ghostty
+    blueman
     keepassxc
     libnotify
     libreoffice
@@ -33,11 +34,11 @@
     opencode
   ];
 
-  xdg.configFile = {
-    "mako".source = ./mako;
-    "ghostty".source = ./ghostty;
-    "rofi".source = ./rofi;
-    "opencode".source = ./opencode;
-    "zathura".source = ./zathura;
+  home.file = {
+    ".config/mako" = { source = ./mako; recursive = true; };
+    ".config/ghostty" = { source = ./ghostty; recursive = true; };
+    ".config/rofi" = { source = ./rofi; recursive = true; };
+    ".config/opencode" = { source = ./opencode; recursive = true; };
+    ".config/zathura" = { source = ./zathura; recursive = true; };
   };
 }
