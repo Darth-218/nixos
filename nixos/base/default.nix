@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  zen-browser,
   ...
 }:
 
@@ -50,6 +51,7 @@
     gnumake
     greetd
     tuigreet
+    zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
   fonts.packages = with pkgs; [
@@ -68,4 +70,3 @@
 
   system.stateVersion = "25.11";
 }
-

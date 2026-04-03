@@ -8,8 +8,8 @@
 {
   home.packages = with pkgs; [
     blender
-    ghostty
     blueman
+    ghostty
     keepassxc
     libnotify
     libreoffice
@@ -18,6 +18,8 @@
     mako
     mpv
     nomacs
+    ollama
+    opencode
     pulseaudio
     rofi
     scrcpy
@@ -30,15 +32,29 @@
     wmenu
     xwayland-satellite
     zathura
-    ollama
-    opencode
   ];
 
   home.file = {
-    ".config/mako" = { source = ./mako; recursive = true; };
-    ".config/ghostty" = { source = ./ghostty; recursive = true; };
-    ".config/rofi" = { source = ./rofi; recursive = true; };
-    ".config/opencode" = { source = ./opencode; recursive = true; };
-    ".config/zathura" = { source = ./zathura; recursive = true; };
+    ".config/mako" = {
+      source = ./mako;
+      recursive = true;
+    };
+    ".config/ghostty" = {
+      source = ./ghostty;
+      recursive = true;
+    };
+    ".config/rofi" = {
+      source = ./rofi;
+      recursive = true;
+    };
+    ".config/opencode" = {
+      source = ./opencode;
+      recursive = true;
+    };
+    ".config/zathura" = {
+      source = ./zathura;
+      recursive = true;
+    };
   };
 }
+
