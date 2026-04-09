@@ -2,13 +2,13 @@
   "$schema": "https://opencode.ai/config.json",
   "agent": {
     "architect": {
-      "mode": "primary",
+      "mode": "subagent",
       "description": "High-level system design, patterns, and cross-module specs.",
       "prompt": "{file:~/.config/opencode/prompts/software/architect.md}",
       "tools": { "read": true, "write": true, "bash": false }
     },
     "project-manager": {
-      "mode": "primary",
+      "mode": "subagent",
       "description": "Requirements gathering, task delegation, and progress tracking.",
       "prompt": "{file:~/.config/opencode/prompts/software/pm.md}",
       "tools": { "read": true, "write": true, "bash": true }
@@ -57,13 +57,13 @@
     },
 
     "research-lead": {
-      "mode": "primary",
+      "mode": "subagent",
       "description": "Scoping the research question and orchestrating the squad.",
       "prompt": "{file:~/.config/opencode/prompts/research/lead.md}",
       "tools": { "read": true, "bash": true }
     },
     "librarian": {
-      "mode": "primary",
+      "mode": "subagent",
       "description": "Deep discovery, neural search, and source retrieval.",
       "prompt": "{file:~/.config/opencode/prompts/research/librarian.md}",
       "tools": { "read": true, "write": true, "bash": true }
