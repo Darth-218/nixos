@@ -45,6 +45,7 @@
   nixpkgs.config.nvidia.acceptLicense = true;
 
   environment.systemPackages = with pkgs; [
+    home-manager
     vim
     wget
     git
@@ -70,3 +71,4 @@
 
   system.stateVersion = "25.11";
 }
+

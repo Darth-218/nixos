@@ -10,6 +10,7 @@
     tmux
     zoxide
     fzf
+    ffmpeg
     glow
     btop
     gcc
@@ -21,7 +22,6 @@
     lazygit
     nerd-fonts.jetbrains-mono
     mysql84
-    mysql-workbench
   ];
 
   programs.git = {

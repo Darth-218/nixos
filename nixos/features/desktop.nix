@@ -17,8 +17,9 @@
     localsend
     mako
     mpv
+    mysql-workbench
     nomacs
-    ollama
+    ollama-cuda
     opencode
     pulseaudio
     rofi
@@ -57,4 +58,3 @@
     };
   };
 }
-
