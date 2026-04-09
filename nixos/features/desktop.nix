@@ -19,7 +19,8 @@
     mpv
     mysql-workbench
     nomacs
-    ollama-cuda
+    # ollama-cuda
+    ollama
     opencode
     pulseaudio
     rofi
