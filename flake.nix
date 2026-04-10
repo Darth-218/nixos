@@ -35,9 +35,9 @@
           home-manager.nixosModules.home-manager
           {
             home-manager = {
-              extraSpecialArgs = { inherit zen-browser; };
               useGlobalPkgs = true;
               useUserPackages = true;
+              extraSpecialArgs = { inherit zen-browser; };
               users.darth = {
                 imports = [
                   ./nixos/features/shell.nix
@@ -56,3 +56,4 @@
       };
     };
 }
+

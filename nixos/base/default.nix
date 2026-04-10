@@ -2,7 +2,6 @@
   config,
   lib,
   pkgs,
-  zen-browser,
   ...
 }:
 
@@ -40,7 +39,7 @@
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet";
+        command = "${pkgs.tuigreet}/bin/tuigreet";
         user = "darth";
       };
     };
@@ -60,8 +59,6 @@
     gnumake
     greetd
     tuigreet
-    podman-compose
-    zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
   fonts.packages = with pkgs; [
@@ -80,4 +77,3 @@
 
   system.stateVersion = "25.11";
 }
-

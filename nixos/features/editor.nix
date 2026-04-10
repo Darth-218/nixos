@@ -17,7 +17,6 @@
     lua-language-server
     nil
     nixpkgs-fmt
-    nodejs
     ripgrep
     texlive.combined.scheme-full
     tree-sitter
@@ -29,4 +28,3 @@
     force = true;
   };
 }
-

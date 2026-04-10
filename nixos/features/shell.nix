@@ -19,9 +19,11 @@
     python315
     sesh
     unzip
+    podman-compose
     lazygit
     nerd-fonts.jetbrains-mono
     mysql84
+    nodejs_24
   ];
 
   programs.git = {
