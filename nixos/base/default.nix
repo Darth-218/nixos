@@ -45,6 +45,10 @@
     };
   };
 
+  services.tailscale = {
+    enable = true;
+  };
+
   virtualisation.libvirtd.enable = lib.mkForce false;
   virtualisation.waydroid.enable = lib.mkForce false;
 
