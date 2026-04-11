@@ -24,6 +24,7 @@
     # ollama
     opencode
     pulseaudio
+    putty
     rofi
     scrcpy
     swaybg
