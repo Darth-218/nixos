@@ -3,6 +3,7 @@
   pkgs,
   lib,
   zen-browser,
+  ollama,
   ...
 }:
 
@@ -21,8 +22,6 @@
     mpv
     mysql-workbench
     nomacs
-    ollama-cuda
-    # ollama
     opencode
     pulseaudio
     putty
@@ -38,6 +37,8 @@
     xwayland-satellite
     zathura
     zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+    unstable.ollama
+    # ollama.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
   home.file = {

@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
@@ -13,14 +14,18 @@
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    ollama.url = "github:abysssol/ollama-flake";
   };
 
   outputs =
     {
       self,
       nixpkgs,
+      nixpkgs-unstable,
       home-manager,
       zen-browser,
+      ollama,
       ...
     }:
     let
@@ -28,7 +33,7 @@
     in
     {
       nixosConfigurations.deathstar = lib.nixosSystem {
-        specialArgs = { inherit zen-browser; };
+        specialArgs = { inherit zen-browser ollama; };
         modules = [
           ./nixos/base/default.nix
           ./nixos/features/keyboard.nix
@@ -37,7 +42,7 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              extraSpecialArgs = { inherit zen-browser; };
+              extraSpecialArgs = { inherit zen-browser ollama; };
               users.darth = {
                 imports = [
                   ./nixos/features/shell.nix
@@ -56,4 +61,3 @@
       };
     };
 }
-

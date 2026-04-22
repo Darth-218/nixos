@@ -49,8 +49,19 @@
     enable = true;
   };
 
-  virtualisation.libvirtd.enable = lib.mkForce false;
-  virtualisation.waydroid.enable = lib.mkForce false;
+  services.openssh = {
+    enable = true;
+  };
+
+  services.mysql = {
+    enable = true;
+    package = pkgs.mysql84;
+  };
+
+  # services.ollama = {
+  #   enable = true;
+  #   package = pkgs.ollama-cuda;
+  # };
 
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.nvidia.acceptLicense = true;
