@@ -3,7 +3,8 @@
   pkgs,
   lib,
   zen-browser,
-  ollama,
+  unstable,
+  pi-mono,
   ...
 }:
 
@@ -37,8 +38,9 @@
     xwayland-satellite
     zathura
     zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+    pi-mono.packages.${pkgs.stdenv.hostPlatform.system}.coding-agent
     unstable.ollama
-    # ollama.packages.${pkgs.stdenv.hostPlatform.system}.default
+    unstable.openclaw
   ];
 
   home.file = {

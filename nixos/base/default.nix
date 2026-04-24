@@ -58,13 +58,12 @@
     package = pkgs.mysql84;
   };
 
-  # services.ollama = {
-  #   enable = true;
-  #   package = pkgs.ollama-cuda;
-  # };
-
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.nvidia.acceptLicense = true;
+
+  nixpkgs.config.permittedInsecurePackages = [
+    "openclaw-2026.4.12"
+  ];
 
   environment.systemPackages = with pkgs; [
     home-manager

@@ -15,7 +15,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    ollama.url = "github:abysssol/ollama-flake";
+    pi-mono.url = "github:lukasl-dev/pi-mono.nix";
   };
 
   outputs =
@@ -25,15 +25,24 @@
       nixpkgs-unstable,
       home-manager,
       zen-browser,
-      ollama,
+      pi-mono,
       ...
     }:
     let
       lib = nixpkgs.lib;
+      unstable-pkgs = import nixpkgs-unstable {
+        system = "x86_64-linux";
+        config.permittedInsecurePackages = [
+          "openclaw-2026.4.12"
+        ];
+      };
     in
     {
       nixosConfigurations.deathstar = lib.nixosSystem {
-        specialArgs = { inherit zen-browser ollama; };
+        specialArgs = {
+          inherit zen-browser pi-mono;
+          unstable = unstable-pkgs;
+        };
         modules = [
           ./nixos/base/default.nix
           ./nixos/features/keyboard.nix
@@ -42,7 +51,10 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              extraSpecialArgs = { inherit zen-browser ollama; };
+              extraSpecialArgs = {
+                inherit zen-browser pi-mono;
+                unstable = unstable-pkgs;
+              };
               users.darth = {
                 imports = [
                   ./nixos/features/shell.nix
