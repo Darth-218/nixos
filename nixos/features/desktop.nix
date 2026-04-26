@@ -13,6 +13,7 @@
     anydesk
     blender
     blueman
+    freecad
     ghostty
     keepassxc
     libnotify
