@@ -14,7 +14,7 @@ eval "$(fzf --bash)"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-export PS1='[\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]]$ '
+export PS1='[\[\033[01;32m\]\u@\H\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]]$ '
 
 HISTSIZE=2500
 HISTFILE=~/.bash_history
