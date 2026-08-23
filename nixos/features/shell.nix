@@ -24,6 +24,8 @@
     nerd-fonts.jetbrains-mono
     mysql84
     nodejs_24
+    ninja
+    meson
   ];
 
   programs.git = {

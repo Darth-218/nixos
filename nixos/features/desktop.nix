@@ -8,17 +8,22 @@
   ...
 }:
 
+let
+  zennotes = pkgs.callPackage ./zennotes.nix { };
+in
+
 {
   home.packages = with pkgs; [
-    anydesk
+    android-studio
+    zennotes
     blender
     blueman
     freecad
     ghostty
+    gimp
     keepassxc
     libnotify
     libreoffice
-    librewolf
     localsend
     mako
     mpv
@@ -28,20 +33,23 @@
     pulseaudio
     putty
     rofi
-    scrcpy
+    qbittorrent
     swaybg
     swaylock
     syncplay
+    shotcut
+    thunderbird
     tuxguitar
     vesktop
     vlc
+    vscodium
     wmenu
     xwayland-satellite
     zathura
     zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
-    pi-mono.packages.${pkgs.stdenv.hostPlatform.system}.coding-agent
-    unstable.ollama
-    unstable.openclaw
+    zed-editor-fhs
+    openjdk21
+    steam-run
   ];
 
   home.file = {

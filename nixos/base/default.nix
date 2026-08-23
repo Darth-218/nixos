@@ -34,6 +34,7 @@
   programs.niri.enable = true;
   programs.xwayland.enable = true;
   programs.firefox.enable = true;
+  programs.nix-ld.enable = true;
 
   services.greetd = {
     enable = true;
@@ -77,6 +78,7 @@
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
+    font-awesome
   ];
 
   nix = {

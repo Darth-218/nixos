@@ -32,9 +32,12 @@
       lib = nixpkgs.lib;
       unstable-pkgs = import nixpkgs-unstable {
         system = "x86_64-linux";
-        config.permittedInsecurePackages = [
-          "openclaw-2026.4.12"
-        ];
+        config = {
+          allowUnfree = true;
+          permittedInsecurePackages = [
+            "openclaw-2026.4.12"
+          ];
+        };
       };
     in
     {

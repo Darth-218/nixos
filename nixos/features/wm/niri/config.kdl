@@ -232,7 +232,7 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Mod+N hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
-    Mod+B hotkey-overlay-title="Open a Terminal: ghostty" { spawn "librewolf"; }
+    Mod+B hotkey-overlay-title="Open a Terminal: ghostty" { spawn "zen"; }
     Mod+D hotkey-overlay-title="Applications Launcher" { spawn-sh "rofi -show combi -modes combi -combi-modes \"window,drun\""; }
     Mod+P hotkey-overlay-title="Applications Launcher" { spawn "wmenu-run"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
