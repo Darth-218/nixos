@@ -2,54 +2,27 @@
   config,
   pkgs,
   lib,
-  zen-browser,
-  unstable,
-  pi-mono,
   ...
 }:
 
-let
-  zennotes = pkgs.callPackage ./zennotes.nix { };
-in
-
 {
+  imports = [
+    ./apps/dev.nix
+    ./apps/creative.nix
+    ./apps/media.nix
+    ./apps/communication.nix
+    ./apps/productivity.nix
+    ./apps/system.nix
+  ];
+
   home.packages = with pkgs; [
-    android-studio
-    zennotes
-    blender
-    blueman
-    freecad
     ghostty
-    gimp
-    keepassxc
-    libnotify
-    libreoffice
-    localsend
     mako
-    mpv
-    mysql-workbench
-    nomacs
-    opencode
-    pulseaudio
-    putty
     rofi
-    qbittorrent
     swaybg
     swaylock
-    syncplay
-    shotcut
-    thunderbird
-    tuxguitar
-    vesktop
-    vlc
-    vscodium
     wmenu
     xwayland-satellite
-    zathura
-    zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
-    zed-editor-fhs
-    openjdk21
-    steam-run
   ];
 
   home.file = {
