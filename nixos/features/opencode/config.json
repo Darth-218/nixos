@@ -56,34 +56,40 @@
       "tools": { "read": true, "write": false, "bash": true }
     },
 
-    "research-lead": {
+    "orchestrator": {
       "mode": "subagent",
-      "description": "Scoping the research question and orchestrating the squad.",
-      "prompt": "{file:~/.config/opencode/prompts/research/lead.md}",
-      "tools": { "read": true, "bash": true }
+      "description": "Supervisor: Scopes the research, spawns workers, and manages the extraction workflow.",
+      "prompt": "{file:~/.config/opencode/prompts/research/orchestrator.md}",
+      "tools": { "read": true, "write": true, "bash": false }
     },
-    "librarian": {
+    "ingestor": {
       "mode": "subagent",
-      "description": "Deep discovery, neural search, and source retrieval.",
-      "prompt": "{file:~/.config/opencode/prompts/research/librarian.md}",
+      "description": "PDF & OCR Specialist: Extracts text, runs OCR on images, and captures document metadata.",
+      "prompt": "{file:~/.config/opencode/prompts/research/ingestor.md}",
       "tools": { "read": true, "write": true, "bash": true }
+    },
+    "architect": {
+      "mode": "subagent",
+      "description": "System & Brain Extractor: Extracts Agent Blueprints, Orchestration, Reasoning Frameworks, and Prompts.",
+      "prompt": "{file:~/.config/opencode/prompts/research/architect.md}",
+      "tools": { "read": true, "write": true, "bash": false }
     },
     "analyst": {
       "mode": "subagent",
-      "description": "Deep-dive analysis, logic verification, and data extraction.",
+      "description": "Data & KB Extractor: Extracts Data Pipelines, Context Management, MITRE Mapping, and IoC Regex.",
       "prompt": "{file:~/.config/opencode/prompts/research/analyst.md}",
-      "tools": { "read": true, "write": true, "bash": true }
+      "tools": { "read": true, "write": true, "bash": false }
     },
-    "auditor": {
+    "critic": {
       "mode": "subagent",
-      "description": "Zero-trust verification of citations and claims.",
-      "prompt": "{file:~/.config/opencode/prompts/research/auditor.md}",
-      "tools": { "read": true, "write": false, "bash": false }
+      "description": "Evaluator & Limitation Extractor: Extracts Benchmarking, Metrics, Failure Modes, and Guardrails.",
+      "prompt": "{file:~/.config/opencode/prompts/research/critic.md}",
+      "tools": { "read": true, "write": true, "bash": false }
     },
-    "scribe": {
+    "compiler": {
       "mode": "subagent",
-      "description": "Synthesis and final report drafting (LaTeX/Markdown).",
-      "prompt": "{file:~/.config/opencode/prompts/research/scribe.md}",
+      "description": "Final Scribe: Merges JSON outputs, builds the Summary Table, and writes the {author}_{year}.md file.",
+      "prompt": "{file:~/.config/opencode/prompts/research/compiler.md}",
       "tools": { "read": true, "write": true, "bash": false }
     }
   }
