@@ -7,6 +7,7 @@
 
 {
   home.packages = with pkgs; [
+    bat
     blueman
     keepassxc
     pulseaudio
@@ -14,5 +15,6 @@
     localsend
     qbittorrent
     steam-run
+    qalculate-gtk
   ];
 }

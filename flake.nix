@@ -36,6 +36,10 @@
           allowUnfree = true;
           permittedInsecurePackages = [
             "openclaw-2026.4.12"
+            "ciscoPacketTracer8-8.2.2"
+          ];
+          environment.systemPackages = [
+            unstable-pkgs.cisco-packet-tracer_8 # or whatever attribute
           ];
         };
       };

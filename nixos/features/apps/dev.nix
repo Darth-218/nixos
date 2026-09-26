@@ -19,5 +19,6 @@ in
     openjdk21
     putty
     zennotes
+    wireshark
   ];
 }

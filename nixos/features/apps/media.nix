@@ -11,5 +11,6 @@
     vlc
     nomacs
     syncplay
+    koreader
   ];
 }
