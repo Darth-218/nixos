@@ -16,5 +16,6 @@
     qbittorrent
     steam-run
     qalculate-gtk
+    quickshell
   ];
 }
