@@ -17,5 +17,6 @@
     steam-run
     qalculate-gtk
     quickshell
+    zip
   ];
 }
